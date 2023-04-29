@@ -4,6 +4,7 @@ import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import io.quarkus.test.junit.mockito.InjectMock;
 import org.acme.domain.dto.AlunoParameter;
+import org.acme.domain.dto.AlunoRequest;
 import org.acme.domain.dto.AlunoResponse;
 import org.acme.rest.AlunoResource;
 import org.acme.usercase.AlunoService;
@@ -104,6 +105,34 @@ public class AlunoResourceTest {
 
         Mockito.verify(alunoService, Mockito.times(1))
                 .findAlunos(any(AlunoParameter.class));
+
+    }
+
+    @Test
+    public void testCreateAlunoEndpoint() {
+        final LocalDate dataNascimento = LocalDate.of(2000, 8, 20);
+        final Long id = 1L;
+        final String nome = "Vitor";
+
+        AlunoRequest request = new AlunoRequest(null, nome, dataNascimento);
+
+        Mockito
+                .when(alunoService.save(any(AlunoRequest.class)))
+                .thenReturn(new AlunoResponse(id, nome, dataNascimento));
+
+        AlunoResponse response = given()
+                .contentType(MediaType.APPLICATION_JSON)
+                .body(request)
+                .when()
+                    .post()
+                .then()
+                .contentType(MediaType.APPLICATION_JSON)
+                .statusCode(201)
+                .extract().body().as(AlunoResponse.class);
+
+        Assertions.assertEquals(response.getId(), id);
+        Assertions.assertEquals(response.getNome(), nome);
+        Assertions.assertEquals(response.getDataNascimento(), dataNascimento);
 
     }
 
