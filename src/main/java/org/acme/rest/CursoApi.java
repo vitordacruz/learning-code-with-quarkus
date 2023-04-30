@@ -18,5 +18,5 @@ public interface CursoApi {
     Response findAll(@BeanParam CursoParam param);
 
     @POST
-    Response createAluno(CursoRequest aluno);
+    Response createCurso(CursoRequest curso);
 }

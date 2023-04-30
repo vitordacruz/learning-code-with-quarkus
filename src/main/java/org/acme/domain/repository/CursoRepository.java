@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface CursoRepository extends PanacheRepository<Curso>  {
 
-    public List<Curso> findAlunos(CursoParam cursoParameter);
+    public List<Curso> findCursos(CursoParam cursoParameter);
 }

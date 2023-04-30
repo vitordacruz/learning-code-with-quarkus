@@ -21,7 +21,7 @@ public class CursoRepositoryImpl implements CursoRepository {
     public static final String ID_FIELD =  "id";
     public static final String NOME_FIELD = "nome";
 
-    public List<Curso> findAlunos(CursoParam cursoParameter) {
+    public List<Curso> findCursos(CursoParam cursoParameter) {
         Map<String, Object> parameters = new HashMap<>();
         final var ID_PARAMETER = "id";
         final var NOME_PARAMETER = "nome";
