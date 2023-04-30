@@ -15,7 +15,7 @@ import javax.ws.rs.core.Response;
 public interface CursoApi {
 
     @GET
-    Response findAll(CursoParam param);
+    Response findAll(@BeanParam CursoParam param);
 
     @POST
     Response createAluno(CursoRequest aluno);
