@@ -9,12 +9,10 @@ import javax.persistence.EntityManager;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import static org.acme.domain.repository.QueryUtils.*;
 
 @ApplicationScoped
 public class AlunoRepositoryImpl implements AlunoRepository {
-    public static final String PARAMETER_SYMBOL = " :";
-
-    public static final String EQUAL_SYMBOL = " = ";
     @Inject
     EntityManager em;
 
