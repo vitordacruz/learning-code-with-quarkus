@@ -1,10 +1,8 @@
 package org.acme.rest;
 
-import org.acme.domain.dto.AlunoResponse;
 import org.acme.domain.dto.CursoParam;
 import org.acme.domain.dto.CursoRequest;
 import org.acme.domain.dto.CursoResponse;
-import org.acme.domain.repository.CursoRepository;
 import org.acme.usercase.CursoService;
 
 import javax.inject.Inject;
