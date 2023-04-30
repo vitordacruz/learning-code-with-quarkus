@@ -20,7 +20,7 @@ public class AlunoRepositoryImpl implements AlunoRepository {
     public static final String NOME_FIELD = "nome";
     public static final String DATA_NASCIMENTO_FIELD = "dataNascimento";
 
-    public static final String AND_CLAUSE = " and ";
+
 
     @Override
     public List<Aluno> findAlunos(AlunoParameter alunoParameter) {
