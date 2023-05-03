@@ -1,4 +1,4 @@
-package org.acme;
+package org.acme.rest;
 
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
