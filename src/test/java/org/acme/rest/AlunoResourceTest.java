@@ -6,7 +6,6 @@ import io.quarkus.test.junit.mockito.InjectMock;
 import org.acme.domain.dto.AlunoParameter;
 import org.acme.domain.dto.AlunoRequest;
 import org.acme.domain.dto.AlunoResponse;
-import org.acme.rest.AlunoResource;
 import org.acme.usercase.AlunoService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -17,7 +16,6 @@ import java.time.LocalDate;
 import java.util.List;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
 import static org.mockito.ArgumentMatchers.any;
 
 @QuarkusTest
